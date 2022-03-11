@@ -14,7 +14,7 @@ Philipp Weißmann
 
 # Agenda
 
-- Voraussetzungenj
+- Voraussetzungen
 - Herkunft
 - Eigenschaften & Philosophie
 - Einsatzgebiete
@@ -82,6 +82,7 @@ Philipp Weißmann
 - Nebenläufigkeit: Easy as pie
   - Routinen
   - Channels
+- Erst seit 1.18: Generics
 
 ---
 
@@ -621,7 +622,7 @@ func main() {
 
 ```
 
-- In Go sind Arrays sind Werte!
+- In Go sind Arrays Werte-Typen!
 - Achtung: Beim Übergeben an eine Funktion werden die Werte kopiert -> Zeiger (später)
 
 ---
@@ -643,7 +644,7 @@ func main() {
 ```
 
 - vgl. Listen in Python
-- Slice: Referenztyp!
+- Slice: Referenz-Typ!
 
 ---
 
@@ -818,7 +819,7 @@ func main() {
 
 - Go unterstützt mehrere Rückgabewerte
 - Go kennt keine Exceptions!
-- `ok` oder `err` sehr üblicher Name für Fehlerrückgabewert
+- `ok` oder `err` sehr üblicher Name für Fehler- bzw. Erfolgs-Rückgabewerte
 
 ---
 
@@ -991,6 +992,7 @@ func main() {
 ```
 
 - Embedding: Gar nicht *so* oft verwendet, lieber mit Interfaces arbeiten (später!)
+- Allgemein zu structs: Könnten mit Zusätzliche Information angereichert werden, mit denen z.B. JSON erzeugt werden kann
 
 ---
 
@@ -1209,7 +1211,7 @@ func main() {
   x := 4
 	switch {
 	case x <= 5:
-		fmt.Println("Kleiner-gleich fünf")
+		fmt.Println("Kleiner-gleich fünf, und damit auch...")
     fallthrough
 	case x <= 10:
 		fmt.Println("Kleiner-gleich zehn")
@@ -1330,7 +1332,7 @@ func main() {
 - Wie kann man sichgehen, dass es nicht vergessen wird, aber auch nicht zu früh ausgeführt? -> `defer`
 - Erlaubt z.B. Laden von Daten und abschliessendes "schliessen" im Programm zusammen zu halten, ohne dies gleich auszuführen
 - Extrem häufiges Pattern
-- Achtung: `defer` in Schleifen: Freigabe erst bei verlassen der Funktion -> Bei grossen Schleifen SEHR viele Resourcen!
+- Achtung: `defer` in Schleifen: Freigabe erst beim Verlassen der Funktion -> Bei grossen Schleifen SEHR viele Resourcen!
 
 ---
 
@@ -1745,7 +1747,7 @@ func main() {
 }
 ```
 
-- Sehr ueblich: als letzten Parameter `error` Typ zurueckgeben
+- Sehr üblich: als letzten Parameter `error` Typ zurueckgeben
 - Dann als Aufrufer: Wert auf `!=nil` pruefen
 - Erinnerung: Keine Exceptions!
 
@@ -1969,7 +1971,7 @@ func main(){
 - Schreibe Routinen/Bibliotheken single-threaded - der Benutzer kann dich parallel ausführen! (Ausnahme: Nutzen von channels)
 - Schütze deinen Abläufe/Race Conditions mit Waitgroups und/oder einer Mutex (z.B. `RWMutex`)
 - Das Thema saubere / optimierte Parallelisierung ist kniffelig!
-- Programm mit parallelität mit `go run -race main.go` starten um race conditions zu finden
+- Programm mit Parallelität mit `go run -race main.go` starten um race conditions zu finden
 - That's it!
 
 ---
@@ -2234,7 +2236,6 @@ func logger() {
 
 - Das Programm ist gültig beendet, wenn die `main` routine beendet ist
 - Wie kann ich aber "bescheid sagen", dass etwas zu Ende geht?
-
 
 ---
 
