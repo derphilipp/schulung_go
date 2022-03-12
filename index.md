@@ -415,7 +415,7 @@ func main() {
 - Erstelle ein Programm mit möglichst vielen verschiedenen Variablen-Typen (z.B. `uint64`).
 - Lege diese Variablen an, ohne sie zu initialisieren
 - Welche Typen "findest" Du?
-- Was passiert, wenn Du die Variablen nur deklarierst, aber ausgibst?
+- Was passiert, wenn Du die Variablen nur deklarierst, aber nicht ausgibst?
 
 ---
 
