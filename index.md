@@ -117,7 +117,8 @@ func main() {
   - Kein dauerhaftes Binary wird erzeugt
 
 - Crosscompilieren:
-  - `GOARCH=amd64 GOOS=linux go build hello.go`
+  - `GOARCH=amd64 GOOS=linux go build hello.go` (bash)
+  - `$env:GOARCH = 'amd64'; $env:GOOS = 'linux'; go build hello.go` (Powershell)
   - Ein Linux Binary für AMD64 Platform entsteht
 
 ---
