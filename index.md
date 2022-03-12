@@ -314,7 +314,7 @@ Abhängigkeiten mit ablegen: `go mod vendor` -> Legt Verzeichnis mit Bibliotheke
 
 ---
 
-# Benutzen einer Bilbiothek - Fazit
+# Benutzen einer Bibliothek - Fazit
 
 - Verwenden von Bibliotheken aus Git Quellen
 - Verwalten & Archivieren von externen Bilbiotheken spielend einfach mit `vendor`
