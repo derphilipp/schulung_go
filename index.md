@@ -394,8 +394,8 @@ import (
 
 var (
     ToBe bool = false
-    MaxInt uint64 = i <<64-1 // (Linksshift)
-    z complex128 = complex.Sqrt(-5 + 12i)
+    MaxInt uint64 = 1 <<64-1 // (Linksshift)
+    z complex128 = cmplx.Sqrt(-5 + 12i)
 )
 
 func main() {
